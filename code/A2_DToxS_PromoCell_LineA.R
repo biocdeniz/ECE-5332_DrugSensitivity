@@ -18,7 +18,7 @@ listOfPackages <- c("data.table") # Add packages here
 paket(listOfPackages)
 
 # Data table help @ https://github.com/Rdatatable/data.table/wiki/Getting-started
-file_path <- "/Users/Carlitre/Desktop/ECE-5332-Drug sensitivity predictive modeling/"
+file_path <- "Your_Baseline_Path_Goes_Here"
 drug_Synergy_File <- fread(paste0(file_path,"Human.A-Hour.48-Plate.3-ReadCounts-Norm-CTRL.ERL_CEF.txt"))
 
 column_names<-names(drug_Synergy_File)
