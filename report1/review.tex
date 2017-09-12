@@ -12,24 +12,24 @@
 \maketitle
 
 \section{Introduction}
-The amount of data available for studying drug toxicity is small. In this study we have focused on the Drug Toxicity Signature Generation Center (DToxS) database (\url{https://martip03.u.hpc.mssm.edu/index.php}).
-This  is focused on the genomic and proteomic data relating to drug toxicity as well as toxicity mitigation. Their ultimate goal is to utilize such data to predict drug induced toxicity as well as discover drug combinations that mitigate said toxicity.
+In this study we have focused on the Drug Toxicity Signature Generation Center (DToxS) database (\url{https://martip03.u.hpc.mssm.edu/index.php}). This data set  is focused on the genomic and proteomic data relating to drug toxicity as well as toxicity mitigation. They also offer cellular signatures of two types of drugs: \textbf{offending} drug or NIB treatment (-nib due to the drug name termination) , associated with cardio-, hepato- or neurotoxicity and \textbf{mitigating} drugs which may help alleviating the detrimental effects of offending drugs. Their ultimate goal is to utilize such data to investigate drug toxicity based on differential gene expression. Their assessments include single drug as well as to discover combinations of an offending and a mitigating drug. The amount of data available for studying drug toxicity in this data set is relatively small and very tissue specific towards cardiomyocytes. 
 
 \section{Background}
-The prime motivation for this dataset is from a paper that studies the alleviating effects of the drug exenatide when taken in combination with the drug rosiglitazone\cite{zhao_2013}. 
-In particular, rates of myocardial infarctions was noted to decrease from a rate of 34\% to a measly 2\% when the drugs are taken in combination.
-In addition to these two drugs, other drug combinations that mitigate serious adverse events is shown in Table 1 of their paper\cite{zhao_2013}. The drugs shown are popular treatments for a wide range of afflictions, from asthma to high cholesterol. 
+The prime motivation for this dataset is from a paper that studies the alleviating effects of the drug \emph{exenatide} when taken in combination with \emph{rosiglitazone}\cite{zhao_2013}. 
+In particular, rates of myocardial infarctions were noted to decrease from a rate of 34\% to a measly 2\% when the drugs are taken in combination, showing the alleviating contribution of the mitigating compound.
+In addition to these two drugs, other drug combinations that lessen serious adverse events is shown in Table 1 of their paper\cite{zhao_2013}. The drugs shown are popular treatments for a wide range of afflictions, ranging from asthma to high cholesterol. 
 To find the drug combinations that mitigate toxicity they utilize the FDA Averse Event Reporting System (FAERS) to which side effects are prevalent in a single drug but not in a combination of drugs.
-However none of these drugs match what is given in the database, which are all anti-cancer drugs, but we can speculate that similar approach was done for their current database however no hard threshold are given.
-Currently there is no published paper that utilizes this dataset.
+However, none of these drugs match what is given in the database, which are all anti-cancer drugs but, we can speculate that similar approach was done for their current database, nonetheless no hard thresholds are given.
+Currently, there is no published paper that utilizes or makes reference to this dataset.
 
 \section{Data Organization}
 
-The main components of this data set is the gene expression calculated on a control and drug treated cell lines. It has a total of 42 drugs and each drug has been tested on a maximum of 4 cell lines.
-Of these 24 drugs are labeled as an offending drug (source of toxicity) and the remaining 18 are labeled as a mitigating drug (reduces toxicity). The full list of drugs is given in the attached file (drugLabels.xlsx).
-Along with individual drugs, a set of 18 drug combinations have also been tested. These combinations, along with the number of cell lines they are tested on, is shown in table \ref{drugCombo}. 
-The gene expression data contains both normalized and unnormalized counts for around 13000 genes. Similarly the proteomic data contains normalized and unnormalized counts of around 4000 proteins.
-In addition to this, the database gives the top 40 differentially expressed genes along with their fold change for a given drug/drug combo.
+Each of the 6 cell lines used in the study corresponds to cardiac tissue of healthy individuals between the ages of 18-65 with no diagnosed disorder/disease, no family  history of a genetically-linked disease/disorder, and no condition requiring hospitalization or immune suppression.
+The main component of this data set is the gene expression and differential expression calculated on a control and drug treated cell lines. It has a total of 42 drugs and each drug has been tested on a maximum of 4 cell lines. 
+Of these 42 drugs, 24 are labeled as offending and the remaining 18 are labeled as a mitigating. The full list of drugs is given in the attached file (drugLabels.xlsx).
+In addition to the individual drug testing, a set of 18 drug combinations have also been assessed. The drug combinations combinations, along with the number of cell lines they are tested on, are shown in table \ref{drugCombo}. 
+The gene expression data contains both normalized and unnormalized counts for around 13,000 genes. Similarly, the proteomic data contains normalized and unnormalized counts of around 4,000 proteins.
+In addition to these data, the top 40 differentially expressed genes are also provided, along with their fold change for a given drug/drug combo. The differential gene analysis and normalization was performed using the R-package: \emph{edgeR}.
 
 \begin{table*}
 	\centering
