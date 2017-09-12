@@ -1,0 +1,64 @@
+\documentclass[]{article}
+
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+%opening
+\title{Assignment 2: Review}
+\author{Carlos De Niz and Kevin Matlock}
+
+\begin{document}
+\date{}
+\maketitle
+
+\section{Introduction}
+The amount of data available for studying drug toxicity is small. In this study we have focused on the Drug Toxicity Signature Generation Center (DToxS) database (\url{https://martip03.u.hpc.mssm.edu/index.php}).
+This  is focused on the genomic and proteomic data relating to drug toxicity as well as toxicity mitigation. Their ultimate goal is to utilize such data to predict drug induced toxicity as well as discover drug combinations that mitigate said toxicity.
+
+\section{Background}
+The prime motivation for this dataset is from a paper that studies the alleviating effects of the drug exenatide when taken in combination with the drug rosiglitazone\cite{zhao_2013}. 
+In particular, rates of myocardial infarctions was noted to decrease from a rate of 34\% to a measly 2\% when the drugs are taken in combination.
+In addition to these two drugs, other drug combinations that mitigate serious adverse events is shown in Table 1 of their paper\cite{zhao_2013}. The drugs shown are popular treatments for a wide range of afflictions, from asthma to high cholesterol. 
+To find the drug combinations that mitigate toxicity they utilize the FDA Averse Event Reporting System (FAERS) to which side effects are prevalent in a single drug but not in a combination of drugs.
+However none of these drugs match what is given in the database, which are all anti-cancer drugs, but we can speculate that similar approach was done for their current database however no hard threshold are given.
+
+\section{Data Organization}
+
+The main components of this data set is the gene expression calculated on a control and drug treated cell lines. It has a total of 42 drugs and each drug has been tested on a maximum of 4 cell lines.
+Of these 24 drugs are labeled as an offending drug (source of toxicity) and the remaining 18 are labeled as a mitigating drug (reduces toxicity). The full list of drugs is given in the attached file (drugLabels.xlsx).
+Along with individual drugs, a set of 18 drug combinations have also been tested. These combinations, along with the number of cell lines they are tested on, is shown in table \ref{drugCombo}.
+
+\begin{table*}
+	\centering
+	\caption{Drug Combinations in the DToxS Dataset.}
+		\label{drugCombo}
+\begin{tabular}{| c | c | c |}
+	\hline
+	Drug A & Drug B & Number of Cell Lines \\
+	\hline
+	Sorafenib & Ursodeoxycholic acid & 1 \\
+	Sorafenib & Diethylpropion & 1\\
+	Sorafenib & Entecavir & 2\\
+	Sorafenib & Ursodeoxycholic acid & 3\\
+	Sunitinib & Alendronate & 1 \\
+	Sunitinib & Domperidone & 1\\
+	Sunitinib & Loperamide & 3\\
+	Sunitinib & Paroxetine & 1\\
+	Sunitinib & Prednisiolone & 1\\
+	Sunitinib & Ursodeoxycholic acid & 2\\
+	Trastuzumab & Domperidone & 3\\
+	Trastuzumab & Loperamide & 2\\
+	Trastuzumab & Ursodeoxycholic acid & 2\\
+	Dasatinib & Cytarabine & 1\\
+	Dasatinib & Methotrexate & 1\\
+	Erlotinib & Cefuroxime & 1\\
+	Imatinib & Cyclosporine & 3 \\
+	Lapatinib & Ursodeoxycholic acid & 1 \\
+	\hline
+\end{tabular}
+\end{table*}
+
+\bibliography{assign2}
+\bibliographystyle{IEEEtran}
+
+\end{document}
