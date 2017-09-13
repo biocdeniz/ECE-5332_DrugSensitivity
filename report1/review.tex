@@ -28,8 +28,12 @@ Each of the 6 cell lines used in the study corresponds to cardiac tissue of heal
 The main component of this data set is the gene expression and differential expression calculated on a control and drug treated cell lines. It has a total of 42 drugs and each drug has been tested on a maximum of 4 cell lines. 
 Of these 42 drugs, 24 are labeled as offending and the remaining 18 are labeled as a mitigating. The full list of drugs is given in the attached file (drugLabels.xlsx).
 In addition to the individual drug testing, a set of 18 drug combinations have also been assessed. The drug combinations combinations, along with the number of cell lines they are tested on, are shown in table \ref{drugCombo}. 
-The gene expression data contains both normalized and unnormalized counts for around 13,000 genes. Similarly, the proteomic data contains normalized and unnormalized counts of around 4,000 proteins.
+The gene expression data contains both normalized and unnormalized counts for around 13,000 genes. Taking the instersection of all genes tested for a samples leaves us with 9445 genes. Similarly, the proteomic data contains normalized and unnormalized counts of around 4,000 proteins while taking the intersection of all proteins leaves us with 3402 proteins. 
 In addition to these data, the top 40 differentially expressed genes are also provided, along with their fold change for a given drug/drug combo. The differential gene analysis and normalization was performed using the R-package: \emph{edgeR}.
+
+Currently we have extracted all the genomic and proteomic data available and sorted the data into seperate csv files. When a drug has both genomic and proteomic data it will contain two seperate files. 
+Each csv files contains two columns for each cell line the drug is tested on. 
+The first column contains the average gene expression/protein expression of the control samples and the second column contains the average expression values for the cell lines treated with said drug. Thus a drug tested on 3 cell lines will have 6 columns.
 
 \begin{table*}
 	\centering
